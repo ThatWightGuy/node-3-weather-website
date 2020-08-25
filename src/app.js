@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast');
 const { request } = require('express');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define paths for Express Config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -102,6 +103,6 @@ app.get('*', (req, res) => {
     });
 });
 
-let server = app.listen(3000, () => {
+let server = app.listen(port, () => {
     console.log('Server is up on port', server.address().port);
 });
